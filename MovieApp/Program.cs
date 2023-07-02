@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using MovieApp.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<MovieDataContext>(
+    o => o.UseNpgsql(builder.Configuration.GetConnectionString("MoviesDb")));
 
 var app = builder.Build();
 
