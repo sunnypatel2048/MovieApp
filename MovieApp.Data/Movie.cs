@@ -24,6 +24,7 @@ namespace MovieApp.Data
 
         /// <summary>Gets or sets the actors.</summary>
         /// <value>The actors.</value>
+        [MaxLength(3)]
         public List<Actor>? Actors { get; set; }
     }
 
@@ -36,6 +37,7 @@ namespace MovieApp.Data
 
         /// <summary>Gets or sets the full name.</summary>
         /// <value>The full name.</value>
+        [Required]
         public string? FullName { get; set; }
     }
 }
