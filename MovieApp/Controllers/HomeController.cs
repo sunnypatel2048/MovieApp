@@ -26,7 +26,8 @@ namespace MovieApp.Controllers
                 Title = m.Title,
                 Year = m.Year.ToString(),
                 Summary = m.Summary,
-                Actors = string.Join(',', m.Actors.Select(a => a.FullName))
+                Actors = string.Join(',', m.Actors.Select(a => a.FullName)),
+                Directors = string.Join(',', m.Directors.Select(d => d.FullName))
             });
 
             return View(movies);

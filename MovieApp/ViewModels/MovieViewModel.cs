@@ -18,5 +18,9 @@
         /// <summary>Gets or sets the actors.</summary>
         /// <value>The actors.</value>
         public string? Actors { get; set; }
+
+        /// <summary>Gets or sets the directors.</summary>
+        /// <value>The directors.</value>
+        public string? Directors { get; set; }
     }
 }
