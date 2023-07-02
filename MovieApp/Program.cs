@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using MovieApp;
 using MovieApp.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,4 +27,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.Seed();
 app.Run();
