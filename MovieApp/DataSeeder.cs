@@ -31,6 +31,10 @@ namespace MovieApp
                 {
                     new Actor { FullName = "Morgan Freeman"},
                     new Actor { FullName = "Tim Robbins"}
+                },
+                Directors = new List<Director>
+                {
+                    new Director { FullName = "Frank Darabont"}
                 }
             });
 
@@ -43,6 +47,10 @@ namespace MovieApp
                 {
                     new Actor { FullName = "Marlon Brando" },
                     new Actor { FullName = "Al Pacino " },
+                },
+                Directors = new List<Director>
+                {
+                    new Director { FullName = "Francis Ford Coppola"}
                 }
             });
 
@@ -55,6 +63,10 @@ namespace MovieApp
                 {
                     new Actor { FullName = "Marlon Brando" },
                     new Actor { FullName = "Al Pacino " },
+                },
+                Directors = new List<Director>
+                {
+                    new Director { FullName = "Christopher Nolan"}
                 }
             });
 

@@ -26,10 +26,28 @@ namespace MovieApp.Data
         /// <value>The actors.</value>
         [MaxLength(3)]
         public List<Actor>? Actors { get; set; }
-    }
 
+        /// <summary>Gets or sets the directors.</summary>
+        /// <value>The directors.</value>
+        [MaxLength(2)]
+        public List<Director>? Directors { get; set; } 
+    }
+    
     /// <summary>The Actor Class</summary>
     public class Actor
+    {
+        /// <summary>Gets or sets the identifier.</summary>
+        /// <value>The identifier.</value>
+        public int Id { get; set; }
+
+        /// <summary>Gets or sets the full name.</summary>
+        /// <value>The full name.</value>
+        [Required]
+        public string? FullName { get; set; }
+    }
+
+    /// <summary>The Director Class</summary>
+    public class Director
     {
         /// <summary>Gets or sets the identifier.</summary>
         /// <value>The identifier.</value>

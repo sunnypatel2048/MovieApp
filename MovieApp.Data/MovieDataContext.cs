@@ -40,5 +40,9 @@ namespace MovieApp.Data
         /// <summary>Gets or sets the actors.</summary>
         /// <value>The actors.</value>
         public DbSet<Actor> Actors { get; set; }
+
+        /// <summary>Gets or sets the directors.</summary>
+        /// <value>The directors.</value>
+        public DbSet<Director> Directors { get; set; }
     }
 }
