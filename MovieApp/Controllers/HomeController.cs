@@ -1,21 +1,35 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MovieApp.Data;
 using MovieApp.Models;
+using MovieApp.ViewModels;
 using System.Diagnostics;
 
 namespace MovieApp.Controllers
 {
+    /// <summary>The HomeController Class</summary>
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        /// <summary>The context</summary>
+        private readonly MovieDataContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        /// <summary>Initializes a new instance of the <see cref="HomeController" /> class.</summary>
+        public HomeController(MovieDataContext context)
         {
-            _logger = logger;
+            this._context = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var movies  = this._context.Movies.Include(m => m.Actors).Select(m => new MovieViewModel
+            {
+                Title = m.Title,
+                Year = m.Year.ToString(),
+                Summary = m.Summary,
+                Actors = string.Join(',', m.Actors.Select(a => a.FullName))
+            });
+
+            return View(movies);
         }
 
         public IActionResult Privacy()

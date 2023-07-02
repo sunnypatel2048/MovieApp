@@ -1,8 +1,13 @@
-﻿@{
+﻿@model IEnumerable<MovieApp.ViewModels.MovieViewModel>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@foreach(var movie in Model)
+{
+    <h1>@movie.Title</h1>
+    <p>@movie.Year</p>
+    <p class="m-2">@movie.Summary</p>
+    <p>@movie.Actors</p>
+}
